@@ -4,7 +4,6 @@ import { hitSphere } from './sphere';
 
 export function rayColor(ray: Ray): Color {
   if(hitSphere(new Point(0, 0, -1), 0.5, ray)) {
-    console.log('HIT SPHERE!');
     return new Color(1, 0, 0);
   }
 
