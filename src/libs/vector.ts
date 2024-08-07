@@ -18,6 +18,14 @@ export function add(v1: Vector, v2: Vector): Vector {
   );
 };
 
+export function subtract(v1: Vector, v2: Vector): Vector {
+  return new Vector(
+    v1.x - v2.x,
+    v1.y - v2.y,
+    v1.z - v2.z
+  );
+};
+
 export function multiplyScalar(v: Vector, t: number): Vector {
   return new Vector(
     v.x * t,
@@ -56,4 +64,11 @@ export function cross(v1: Vector, v2: Vector): Vector {
 
 export function unit(v: Vector): Vector {
   return multiplyScalar(v, 1 / len(v));
+};
+
+export function isEqual(v1: Vector, v2: Vector): boolean {
+  const isXEqual = v1.x === v2.x;
+  const isYEqual = v1.y === v2.y;
+  const isZEqual = v1.z === v2.z;
+  return isXEqual && isYEqual && isZEqual;
 };

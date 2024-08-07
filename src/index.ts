@@ -11,7 +11,7 @@ import {
 import { rayColor } from './graphics';
 
 import { Vector, Point, Ray, Color } from './libs';
-import { add, multiplyScalar, unit } from './libs/vector';
+import { add, subtract, multiplyScalar, unit } from './libs/vector';
 
 import { draw } from './utils';
 
@@ -25,7 +25,7 @@ async function main() {
     for(let j = 0; j < IMAGE_HEIGHT; j++) {
       for(let i = 0; i < IMAGE_WIDTH; i++) {
         const PIXEL_CENTER = add(PIXEL00_LOC, add(multiplyScalar(PIXEL_DELTA_U, i), multiplyScalar(PIXEL_DELTA_V, j)));
-        const RAY_DIRECTION = add(PIXEL_CENTER, multiplyScalar(CAMERA_CENTER, -1));
+        const RAY_DIRECTION = subtract(PIXEL_CENTER, CAMERA_CENTER);
         const RAY = new Ray(CAMERA_CENTER, RAY_DIRECTION);
         const pixel = rayColor(RAY);
 
