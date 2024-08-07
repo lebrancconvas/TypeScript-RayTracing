@@ -1,6 +1,6 @@
 import { CONFIG } from './config';
-import { Vector, Point, Ray, Color } from '../libs';
-import { add, subtract, multiplyScalar, unit } from '../libs/vector';
+import { Vector, Point } from '../libs';
+import { add, subtract, multiplyScalar } from '../libs/vector';
 
 export const ASPECT_RATIO = CONFIG.aspectRatio;
 export const IMAGE_WIDTH = CONFIG.width;
