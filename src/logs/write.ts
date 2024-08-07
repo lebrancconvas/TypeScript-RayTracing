@@ -21,7 +21,7 @@ export async function writeText(content: string) {
   try {
     await writeFile(filePath, content);
     console.log('Created Log Text Success!');
-  } catch(err) {
-    throw new Error(`Error on Created Text: ${err}`);
+  } catch(error) {
+    throw new Error(`Error on Created Text: ${error}`);
   }
 };
